@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block title %}BOGGLE{% endblock %} {% block content
+%}
+<div class="score-container">
+  <h1 class="score">Score: 0</h1>
+</div>
+<div class="timer-container">
+  <h1 class="timer">Time Left: 59</h1>
+</div>
+<div class="table-container">
+  <table>
+    {% for row in board %}
+    <tr>
+      {% for item in row %}
+      <td>{{item}}</td>
+      {% endfor %}
+    </tr>
+    {%endfor%}
+  </table>
+</div>
+<div class="result-container">
+  <h3 class="hidden result">result goes here</h3>
+</div>
+<div class="form-container">
+  <form>
+    <div class="form-group">
+      <label for="guess">Guess:</label>
+      <input type="text" name="guess" />
+    </div>
+    <button type="submit">submit</button>
+  </form>
+</div>
+
+{% endblock %}
